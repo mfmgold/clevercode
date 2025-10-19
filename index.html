@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Clever Code – Process Automation Experts</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --deep-blue: #18233A;
+      --gold: #D4B048;
+      --beige: #F6F1E9;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: var(--beige);
+      color: var(--deep-blue);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--beige);
+      padding: 1.5rem 2rem;
+    }
+    .logo {
+      height: 56px;
+    }
+    nav a {
+      color: var(--deep-blue);
+      text-decoration: none;
+      margin-left: 2rem;
+      font-weight: 700;
+      font-size: 1.08rem;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: var(--gold);
+    }
+    .hero {
+      text-align: center;
+      padding: 5rem 1.5rem 3rem 1.5rem;
+      background: linear-gradient(120deg, var(--beige) 80%, #fff 100%);
+    }
+    .hero-title {
+      font-size: 2.6rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      color: var(--deep-blue);
+    }
+    .hero-tagline {
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--deep-blue);
+      margin-bottom: 2.2rem;
+    }
+    .cta-button {
+      background: var(--gold);
+      color: var(--deep-blue);
+      border: none;
+      border-radius: 6px;
+      padding: 0.85rem 1.8rem;
+      font-size: 1.15rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 2px 6px #0001;
+      letter-spacing: 0.03em;
+      transition: background 0.18s, color 0.18s;
+    }
+    .cta-button:hover {
+      background: var(--deep-blue);
+      color: var(--gold);
+    }
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.2rem;
+    }
+    section {
+      margin-bottom: 3.5rem;
+    }
+    h2 {
+      font-size: 2rem;
+      color: var(--deep-blue);
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 1.3rem;
+      letter-spacing: 0.01em;
+    }
+    .services-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .service {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px #0002;
+      padding: 2rem 1rem;
+      margin-bottom: 0;
+      min-height: 170px;
+    }
+    .service-title {
+      color: var(--gold);
+      font-size: 1.13rem;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+    }
+    .service-desc {
+      color: var(--deep-blue);
+      font-size: 1rem;
+      line-height: 1.45;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background: #fff;
+      border-radius: 8px;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 1px 4px #0002;
+      max-width: 410px;
+      margin: 0 auto;
+    }
+    input, textarea {
+      font-family: inherit;
+      border: 1.5px solid var(--gold);
+      border-radius: 5px;
+      font-size: 1rem;
+      padding: 0.65rem;
+      outline: none;
+      background: #FAF9F8;
+      color: var(--deep-blue);
+      transition: border 0.16s;
+    }
+    input:focus, textarea:focus {
+      border-color: var(--deep-blue);
+    }
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+      max-height: 230px;
+    }
+    .submit-btn {
+      background: var(--gold);
+      color: var(--deep-blue);
+      font-weight: 700;
+      padding: 0.75rem;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.13s, color 0.13s;
+      margin-top: 0.4rem;
+    }
+    .submit-btn:hover {
+      background: var(--deep-blue);
+      color: var(--gold);
+    }
+    #topButton {
+      display:none;
+      position:fixed;
+      bottom:2rem;
+      right:2rem;
+      z-index:99;
+      background:var(--gold);
+      color:var(--deep-blue);
+      border:none;
+      padding:0.7rem 1.2rem;
+      border-radius:7px;
+      font-weight:700;
+      box-shadow:0 2px 8px #0002;
+      cursor:pointer;
+      font-size:1.1rem;
+    }
+    #topButton:hover {
+      background: var(--deep-blue);
+      color: var(--gold);
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 700px) {
+      .services-list {
+        grid-template-columns: 1fr;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 1rem;
+      }
+      nav {
+        margin-top: 0.8rem;
+      }
+      .logo {
+        height: 44px;
+      }
+      .hero {
+        padding: 3rem 0.4rem 2.2rem 0.4rem;
+      }
+      .hero-title {
+        font-size: 2rem;
+      }
+      main {
+        padding: 1.4rem 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="Final-Logo.png" alt="Clever Code Logo" class="logo">
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Get in Touch</a>
+    </nav>
+  </header>
+  <div class="hero" id="home">
+    <img src="Final-Logo.png" alt="Clever Code Logo" class="logo" style="margin-bottom:1.3rem;">
+    <div class="hero-title">Empowering Businesses<br>with Smart Automation</div>
+    <div class="hero-tagline">Streamlining workflows. Elevating outcomes.</div>
+    <a href="#contact"><button class="cta-button">Get in Touch</button></a>
+  </div>
+  <main>
+    <section id="about">
+      <h2>Who We Are</h2>
+      <p>Clever Code specializes in transforming businesses through automation, solution architecture, and software engineering. We believe in efficient, elegant solutions that let you focus on what matters.</p>
+    </section>
+    <section id="services">
+      <h2>Our Services</h2>
+      <div class="services-list">
+        <div class="service">
+          <div class="service-title">Robotic Process Automation Development</div>
+          <div class="service-desc">Automate repetitive tasks, boost productivity, and reduce error.</div>
+        </div>
+        <div class="service">
+          <div class="service-title">Solution Architecture</div>
+          <div class="service-desc">Design scalable, future-proof systems tailored to your goals.</div>
+        </div>
+        <div class="service">
+          <div class="service-title">Software Maintenance</div>
+          <div class="service-desc">Keep your critical software running smoothly and securely.</div>
+        </div>
+        <div class="service">
+          <div class="service-title">Process Automation Consulting</div>
+          <div class="service-desc">Identify automation opportunities and craft strategic roadmaps.</div>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <h2>Get in Touch</h2>
+      <p>Ready to unlock business efficiency?</p>
+      <form action="https://formspree.io/f/xwprzrla" method="POST">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <textarea name="message" placeholder="How can we assist you?" required></textarea>
+        <input type="text" name="_gotcha" style="display:none">
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </section>
+  </main>
+  <button id="topButton" title="Go to top">↑ Home</button>
+  <script>
+    const topButton = document.getElementById('topButton');
+    window.onscroll = function() {
+      topButton.style.display = (window.scrollY > 150) ? 'block' : 'none';
+    };
+    topButton.onclick = function() {
+      window.location.hash = 'home';
+    };
+  </script>
+</body>
+</html>
