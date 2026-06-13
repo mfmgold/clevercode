@@ -85,6 +85,7 @@ const PROJECTS = [
     "tagline": "A clean, distraction-free focus timer",
     "description": "A simple Pomodoro timer to help you focus with timed work and break intervals. No sign-up, no distractions, just you and the timer.",
     "category": "Web App",
+    "icon": "🍅",
     "status": "Live",
     "github": "https://github.com/mfmgold",
     "demo": "https://murtuza.neocities.org/pomodoro/",
@@ -98,6 +99,7 @@ const PROJECTS = [
     "tagline": "Save and reuse text snippets in your browser",
     "description": "A handy browser-based clipboard tool for saving and reusing text snippets. Useful for repetitive copy and paste tasks, with no extensions needed.",
     "category": "Web App",
+    "icon": "📋",
     "status": "Live",
     "github": "https://github.com/mfmgold",
     "demo": "https://murtuza.neocities.org/clipboard/",
@@ -111,6 +113,7 @@ const PROJECTS = [
     "tagline": "Intelligent parsing of invoices, contracts and forms",
     "description": "AI-assisted document extraction pipelines that turn invoices, contracts and forms into structured, usable data. Built using OCR, large language models and custom validation logic.",
     "category": "AI",
+    "icon": "📄",
     "status": "In Progress",
     "github": "https://github.com/mfmgold",
     "demo": "",
@@ -188,7 +191,7 @@ function renderProjects(filter) {
 function projectCard(p) {
   const statusClass = STATUS_CLASSES[p.status] || 'status-archived';
   const badgeClass  = BADGE_CLASSES[p.category] || 'badge--webapp';
-  const icon        = CATEGORY_ICONS[p.category] || '💻';
+  const icon        = p.icon || CATEGORY_ICONS[p.category] || '💻';
 
   const links = [
     p.demo ? `
