@@ -50,9 +50,16 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-// ── Projects data (inline — no fetch required) ───────────────
+// Projects data. Inline project list, no fetch required.
 // To add a new project, copy one of the objects below and edit it.
 // Keep projects.json in sync if you use it for other purposes.
+const ALLOWED_PROJECT_IDS = new Set([
+  'warp',
+  'pomodoro',
+  'clipboard',
+  'doc-extraction'
+]);
+
 const PROJECTS = [
   {
     "id": "warp",
@@ -101,8 +108,8 @@ const PROJECTS = [
   {
     "id": "doc-extraction",
     "name": "AI Document Extraction",
-    "tagline": "Intelligent parsing of invoices, contracts & forms",
-    "description": "AI-powered document extraction pipelines that turn invoices, contracts, and forms into structured, usable data. Built using OCR, large language models, and custom post-processing logic.",
+    "tagline": "Intelligent parsing of invoices, contracts and forms",
+    "description": "AI-assisted document extraction pipelines that turn invoices, contracts and forms into structured, usable data. Built using OCR, large language models and custom validation logic.",
     "category": "AI",
     "status": "In Progress",
     "github": "https://github.com/mfmgold",
@@ -112,6 +119,8 @@ const PROJECTS = [
     "roadmap": []
   }
 ];
+
+const visibleProjects = PROJECTS.filter(project => ALLOWED_PROJECT_IDS.has(project.id));
 
 // ── Category icons / badges / status ────────────────────────
 const CATEGORY_ICONS = {
@@ -142,7 +151,7 @@ function renderFilterBar() {
   const bar = document.getElementById('filter-bar');
   if (!bar) return;
 
-  const categories = ['All', ...new Set(PROJECTS.map(p => p.category))];
+  const categories = ['All', ...new Set(visibleProjects.map(p => p.category))];
   bar.innerHTML = categories.map(cat => `
     <button class="filter-btn ${cat === 'All' ? 'active' : ''}" data-cat="${cat}">
       ${cat}
@@ -164,8 +173,8 @@ function renderProjects(filter) {
   if (!grid) return;
 
   const filtered = filter === 'All'
-    ? PROJECTS.filter(p => !p.featured)
-    : PROJECTS.filter(p => p.category === filter && !p.featured);
+    ? visibleProjects.filter(p => !p.featured)
+    : visibleProjects.filter(p => p.category === filter && !p.featured);
 
   if (filtered.length === 0) {
     grid.innerHTML = `<p style="color:var(--text-2);grid-column:1/-1;text-align:center;padding:40px 0;">No projects in this category yet.</p>`;
@@ -217,7 +226,7 @@ function projectCard(p) {
 
 // ── Render Warp roadmap ──────────────────────────────────────
 function renderWarp() {
-  const warp = PROJECTS.find(p => p.id === 'warp');
+  const warp = visibleProjects.find(p => p.id === 'warp');
   if (!warp) return;
 
   const roadmapEl = document.getElementById('warp-roadmap');
@@ -256,13 +265,13 @@ contactForm?.addEventListener('submit', async (e) => {
         <div style="text-align:center;padding:48px 0;">
           <div style="font-size:2.5rem;margin-bottom:16px;">✅</div>
           <h3 style="color:var(--white);font-family:var(--font-display);margin-bottom:8px;">Message sent!</h3>
-          <p style="color:var(--text-2);">Thanks for reaching out — I'll get back to you shortly.</p>
+          <p style="color:var(--text-2);">Thanks for reaching out. I'll get back to you shortly.</p>
         </div>`;
     } else {
       throw new Error('Failed');
     }
   } catch {
-    btn.textContent = 'Failed — try emailing directly';
+    btn.textContent = 'Failed. Try emailing directly';
     btn.disabled = false;
     setTimeout(() => { btn.textContent = originalText; btn.disabled = false; }, 4000);
   }
