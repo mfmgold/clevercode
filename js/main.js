@@ -85,7 +85,7 @@ const PROJECTS = [
     "tagline": "A clean, distraction-free focus timer",
     "description": "A simple Pomodoro timer to help you focus with timed work and break intervals. No sign-up, no distractions, just you and the timer.",
     "category": "Web App",
-    "icon": "🍅",
+    "icon": "⏱️",
     "status": "Live",
     "github": "https://github.com/mfmgold",
     "demo": "https://murtuza.neocities.org/pomodoro/",
@@ -99,7 +99,7 @@ const PROJECTS = [
     "tagline": "Save and reuse text snippets in your browser",
     "description": "A handy browser-based clipboard tool for saving and reusing text snippets. Useful for repetitive copy and paste tasks, with no extensions needed.",
     "category": "Web App",
-    "icon": "📋",
+    "icon": "🗂️",
     "status": "Live",
     "github": "https://github.com/mfmgold",
     "demo": "https://murtuza.neocities.org/clipboard/",
@@ -191,7 +191,7 @@ function renderProjects(filter) {
 function projectCard(p) {
   const statusClass = STATUS_CLASSES[p.status] || 'status-archived';
   const badgeClass  = BADGE_CLASSES[p.category] || 'badge--webapp';
-  const icon        = p.icon || CATEGORY_ICONS[p.category] || '💻';
+  const icon = p.icon || CATEGORY_ICONS[p.category] || '💻';
 
   const links = [
     p.demo ? `
@@ -211,7 +211,7 @@ function projectCard(p) {
 
   return `
     <div class="project-card fade-in" data-category="${p.category}">
-      <div class="project-card__img">${icon}</div>
+      <div class="project-card__img" aria-hidden="true">${icon}</div>
       <div class="project-card__body">
         <div class="project-card__meta">
           <span class="badge ${badgeClass}">${p.category}</span>
