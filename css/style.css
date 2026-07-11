@@ -537,6 +537,9 @@ a:hover { color: var(--white); }
   padding: 3px 10px;
   border-radius: 100px;
 }
+.badge--link { text-decoration: none; transition: filter .2s ease, transform .2s ease; }
+.badge--link:hover { filter: brightness(1.25); transform: translateY(-1px); }
+.badge--link:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
 .badge--flutter { background: rgba(88,166,255,.15); color: #58a6ff; border: 1px solid rgba(88,166,255,.2); }
 .badge--ai      { background: rgba(139,92,246,.15); color: #a78bfa; border: 1px solid rgba(139,92,246,.2); }
 .badge--rpa     { background: rgba(232,162,39,.15); color: var(--accent); border: 1px solid rgba(232,162,39,.2); }

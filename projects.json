@@ -35,6 +35,48 @@
     "roadmap": []
   },
   {
+    "id": "ask-aloud",
+    "name": "Ask Aloud",
+    "tagline": "Turn questions into spoken answers",
+    "description": "A voice-friendly question and answer app that lets you ask naturally and hear the response aloud. A simple, accessible way to get answers without staying glued to the screen.",
+    "category": "Web App",
+    "icon": "🎙️",
+    "status": "Live",
+    "github": "https://github.com/mfmgold",
+    "demo": "https://murtuza.neocities.org/askaloud/",
+    "download": "",
+    "featured": false,
+    "roadmap": []
+  },
+  {
+    "id": "flow-forge",
+    "name": "Flow Forge",
+    "tagline": "Shape ideas into clear visual flows",
+    "description": "A browser-based workspace for mapping ideas, processes and connections into easy-to-follow flows. Useful for turning a rough concept into a clear visual plan.",
+    "category": "Web App",
+    "icon": "🔀",
+    "status": "Live",
+    "github": "https://github.com/mfmgold",
+    "demo": "https://murtuza.neocities.org/flowforge/",
+    "download": "",
+    "featured": false,
+    "roadmap": []
+  },
+  {
+    "id": "classic-snake",
+    "name": "Classic Snake Game",
+    "tagline": "The timeless arcade game in your browser",
+    "description": "A clean browser take on the classic Snake game. Guide the snake, collect food and chase a higher score in a quick, nostalgic arcade break.",
+    "category": "Web App",
+    "icon": "🐍",
+    "status": "Live",
+    "github": "https://github.com/mfmgold",
+    "demo": "https://murtuza.neocities.org/snake/",
+    "download": "",
+    "featured": false,
+    "roadmap": []
+  },
+  {
     "id": "clipboard",
     "name": "Clipboard Manager",
     "tagline": "Save and reuse text snippets in your browser",

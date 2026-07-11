@@ -56,6 +56,9 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 const ALLOWED_PROJECT_IDS = new Set([
   'warp',
   'pomodoro',
+  'ask-aloud',
+  'flow-forge',
+  'classic-snake',
   'clipboard',
   'doc-extraction'
 ]);
@@ -89,6 +92,48 @@ const PROJECTS = [
     "status": "Live",
     "github": "https://github.com/mfmgold",
     "demo": "https://murtuza.neocities.org/pomodoro/",
+    "download": "",
+    "featured": false,
+    "roadmap": []
+  },
+  {
+    "id": "ask-aloud",
+    "name": "Ask Aloud",
+    "tagline": "Turn questions into spoken answers",
+    "description": "A voice-friendly question and answer app that lets you ask naturally and hear the response aloud. A simple, accessible way to get answers without staying glued to the screen.",
+    "category": "Web App",
+    "icon": "🎙️",
+    "status": "Live",
+    "github": "https://github.com/mfmgold",
+    "demo": "https://murtuza.neocities.org/askaloud/",
+    "download": "",
+    "featured": false,
+    "roadmap": []
+  },
+  {
+    "id": "flow-forge",
+    "name": "Flow Forge",
+    "tagline": "Shape ideas into clear visual flows",
+    "description": "A browser-based workspace for mapping ideas, processes and connections into easy-to-follow flows. Useful for turning a rough concept into a clear visual plan.",
+    "category": "Web App",
+    "icon": "🔀",
+    "status": "Live",
+    "github": "https://github.com/mfmgold",
+    "demo": "https://murtuza.neocities.org/flowforge/",
+    "download": "",
+    "featured": false,
+    "roadmap": []
+  },
+  {
+    "id": "classic-snake",
+    "name": "Classic Snake Game",
+    "tagline": "The timeless arcade game in your browser",
+    "description": "A clean browser take on the classic Snake game. Guide the snake, collect food and chase a higher score in a quick, nostalgic arcade break.",
+    "category": "Web App",
+    "icon": "🐍",
+    "status": "Live",
+    "github": "https://github.com/mfmgold",
+    "demo": "https://murtuza.neocities.org/snake/",
     "download": "",
     "featured": false,
     "roadmap": []
@@ -192,6 +237,9 @@ function projectCard(p) {
   const statusClass = STATUS_CLASSES[p.status] || 'status-archived';
   const badgeClass  = BADGE_CLASSES[p.category] || 'badge--webapp';
   const icon = p.icon || CATEGORY_ICONS[p.category] || '💻';
+  const badge = p.category === 'Web App' && p.demo
+    ? `<a href="${p.demo}" target="_blank" rel="noopener" class="badge ${badgeClass} badge--link" aria-label="Open ${p.name}">${p.category}</a>`
+    : `<span class="badge ${badgeClass}">${p.category}</span>`;
 
   const links = [
     p.demo ? `
@@ -214,7 +262,7 @@ function projectCard(p) {
       <div class="project-card__img" aria-hidden="true">${icon}</div>
       <div class="project-card__body">
         <div class="project-card__meta">
-          <span class="badge ${badgeClass}">${p.category}</span>
+          ${badge}
           <span style="font-size:.78rem;color:var(--text-2);">
             <span class="status-dot ${statusClass}"></span>${p.status}
           </span>
