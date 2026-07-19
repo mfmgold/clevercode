@@ -79,7 +79,7 @@ const PROJECTS = [
       { "phase": "Phase 1", "title": "Core P2P Engine & Identity", "status": "complete" },
       { "phase": "Phase 2", "title": "UI — Contacts & File Transfer", "status": "complete" },
       { "phase": "Phase 3", "title": "Push Notifications & Queue Resume", "status": "complete" },
-      { "phase": "Phase 4", "title": "Beta Release (iOS, Android, macOS, Windows)", "status": "upcoming" }
+      { "phase": "Phase 4", "title": "Beta Release (iOS, Android, macOS, Windows, Linux)", "status": "upcoming" }
     ]
   },
   {
