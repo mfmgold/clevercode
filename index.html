@@ -33,6 +33,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#services">Expertise</a></li>
       <li><a href="#projects">Portfolio</a></li>
+      <li><a href="#invoicesnap">InvoiceSnap</a></li>
       <li><a href="#warp">Warp</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -57,6 +58,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#services">Expertise</a></li>
     <li><a href="#projects">Portfolio</a></li>
+    <li><a href="#invoicesnap">InvoiceSnap</a></li>
     <li><a href="#warp">Warp</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -156,8 +158,9 @@
           processing, solution design and custom tools.
         </p>
         <p style="color:var(--text-2);line-height:1.8;margin-bottom:32px;">
-          I'm also building <strong style="color:var(--white);">Warp</strong>, a peer-to-peer
-          file sharing app, along with a few web utilities and automation tools.
+          I built <strong style="color:var(--white);">InvoiceSnap</strong>, a live, low-cost
+          invoice extraction SaaS, and I'm also building <strong style="color:var(--white);">Warp</strong>,
+          a peer-to-peer file sharing app.
         </p>
 
         <div class="btn-group">
@@ -268,6 +271,98 @@
         <p>Building web applications, utility tools and software projects with Python,
            JavaScript and modern web technologies, from small tools to more complete apps.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     INVOICESNAP — Live SaaS
+════════════════════════════════════════════════════════════ -->
+<section id="invoicesnap" class="section invoicesnap-section section--border-top">
+  <div class="container">
+    <div class="invoicesnap-hero fade-in">
+      <div class="invoicesnap-hero__content">
+        <div class="invoicesnap-hero__tag">
+          <span class="status-dot status-live"></span>
+          Live SaaS · Built by Clever Code
+        </div>
+        <span class="label">Featured Product</span>
+        <h2>InvoiceSnap</h2>
+        <p class="invoicesnap-hero__lead">Forward your invoice. Get structured data back.</p>
+        <p>
+          InvoiceSnap is a low-cost AI invoice extraction service built for businesses that
+          want useful data without another complicated system. Email a PDF invoice to your
+          private address and receive clean CSV, JSON or cXML back in your inbox—usually
+          within a minute.
+        </p>
+        <div class="invoicesnap-hero__actions">
+          <a href="https://invoicesnap.clevercode.au" target="_blank" rel="noopener" class="btn btn--primary">
+            Visit InvoiceSnap
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+          </a>
+          <a href="https://invoicesnap.clevercode.au/auth/signup" target="_blank" rel="noopener" class="btn btn--outline">Start with $1 free credit</a>
+        </div>
+        <p class="invoicesnap-price">5¢ per page <span>·</span> Pay as you go <span>·</span> No subscription</p>
+      </div>
+
+      <div class="invoicesnap-demo" aria-label="Fictional cartoon-themed invoice emailed to InvoiceSnap and returned as structured data">
+        <div class="invoicesnap-demo__bar">
+          <span></span><span></span><span></span>
+          <strong>InvoiceSnap</strong>
+        </div>
+        <div class="invoicesnap-email">
+          <div><span>To</span><strong>demo-address@invoices.clevercode.au</strong></div>
+          <div><span>File</span><strong>📎 toon-supplies-2048.pdf</strong></div>
+        </div>
+        <div class="invoicesnap-progress">
+          <span class="status-dot status-live"></span>
+          Extracted in ~20 seconds · Fictional sample
+        </div>
+        <div class="invoicesnap-invoice-meta">
+          <div><span>Supplier</span><strong>Acme Toon Supply Co.</strong></div>
+          <div><span>Customer</span><strong>Benny Bunny Studios</strong></div>
+          <div><span>Invoice</span><strong>TOON-2048</strong></div>
+          <div><span>Date</span><strong>26 Jul 2026</strong></div>
+        </div>
+        <div class="invoicesnap-table-wrap">
+          <table class="invoicesnap-line-items">
+            <thead>
+              <tr><th>Line item</th><th>Qty</th><th>Amount</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Road Runner Rocket Skates</td><td>2</td><td>$178.00</td></tr>
+              <tr><td>Benny Bunny Carrot Crates</td><td>4</td><td>$50.00</td></tr>
+              <tr><td>Mystery Van Super Wax</td><td>1</td><td>$45.00</td></tr>
+              <tr><td>Bubble Toon Wand Kits</td><td>3</td><td>$49.50</td></tr>
+            </tbody>
+            <tfoot>
+              <tr><th colspan="2">Subtotal</th><td>$322.50</td></tr>
+              <tr><th colspan="2">GST</th><td>$32.25</td></tr>
+              <tr class="invoicesnap-line-items__total"><th colspan="2">Total</th><td>$354.75</td></tr>
+            </tfoot>
+          </table>
+        </div>
+        <div class="invoicesnap-output">CSV &nbsp; JSON &nbsp; cXML</div>
+      </div>
+    </div>
+
+    <div class="invoicesnap-features fade-in">
+      <article>
+        <span>01</span>
+        <h3>Forward</h3>
+        <p>Send or auto-forward any PDF invoice from your existing email, scanner or accounting inbox.</p>
+      </article>
+      <article>
+        <span>02</span>
+        <h3>Extract</h3>
+        <p>AI reads ABNs, GST, totals, line items and the fields you choose—without guessing missing values.</p>
+      </article>
+      <article>
+        <span>03</span>
+        <h3>Receive</h3>
+        <p>Structured CSV, JSON or cXML arrives back in your inbox, ready for spreadsheets, ERP or procurement systems.</p>
+      </article>
     </div>
   </div>
 </section>

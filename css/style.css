@@ -585,6 +585,237 @@ a:hover { color: var(--white); }
 }
 .project-link:hover { color: var(--accent); }
 
+/* ── InvoiceSnap Section ───────────────────────────────────── */
+.invoicesnap-section {
+  background:
+    radial-gradient(circle at 78% 35%, rgba(88,166,255,.10), transparent 34%),
+    var(--bg);
+}
+
+.invoicesnap-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, .9fr);
+  gap: 64px;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(21,32,53,.96), rgba(14,21,33,.98));
+  border: 1px solid rgba(88,166,255,.24);
+  border-radius: var(--radius-lg);
+  padding: 64px;
+  box-shadow: 0 24px 80px rgba(0,0,0,.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.invoicesnap-hero::before {
+  content: '';
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  right: -140px;
+  top: -180px;
+  background: rgba(88,166,255,.10);
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+.invoicesnap-hero__content,
+.invoicesnap-demo { position: relative; z-index: 1; }
+
+.invoicesnap-hero__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(63,185,80,.28);
+  border-radius: 100px;
+  background: rgba(63,185,80,.10);
+  color: #62d477;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.invoicesnap-hero h2 {
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.invoicesnap-hero__lead {
+  color: #9fc8ff !important;
+  font-size: 1.2rem !important;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+.invoicesnap-hero__content > p:not(.invoicesnap-hero__lead):not(.invoicesnap-price) {
+  color: var(--text-2);
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 590px;
+}
+
+.invoicesnap-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.invoicesnap-price {
+  color: var(--text-2);
+  font-size: .82rem;
+  margin-top: 16px;
+}
+.invoicesnap-price span { color: var(--text-3); margin: 0 5px; }
+
+.invoicesnap-demo {
+  background: #101927;
+  border: 1px solid rgba(255,255,255,.11);
+  border-radius: 14px;
+  box-shadow: 0 28px 64px rgba(0,0,0,.42);
+  overflow: hidden;
+  transform: rotate(1deg);
+}
+
+.invoicesnap-demo__bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 13px 16px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  color: var(--text-2);
+  font-size: .72rem;
+}
+.invoicesnap-demo__bar span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--text-3);
+}
+.invoicesnap-demo__bar span:first-child { background: #f85149; }
+.invoicesnap-demo__bar span:nth-child(2) { background: #d9a84a; }
+.invoicesnap-demo__bar span:nth-child(3) { background: #3fb950; }
+.invoicesnap-demo__bar strong { margin-left: auto; font-weight: 500; }
+
+.invoicesnap-email { padding: 20px 20px 12px; }
+.invoicesnap-email div {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  font-size: .74rem;
+}
+.invoicesnap-email span { color: var(--text-3); }
+.invoicesnap-email strong {
+  color: var(--text);
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.invoicesnap-progress {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 4px 20px 16px;
+  color: #62d477;
+  font-size: .72rem;
+}
+
+.invoicesnap-invoice-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 20px;
+  border: 1px solid rgba(88,166,255,.16);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.invoicesnap-invoice-meta div { padding: 9px 10px; border: 1px solid rgba(88,166,255,.08); }
+.invoicesnap-invoice-meta span { display: block; color: var(--text-3); font-size: .59rem; margin-bottom: 1px; }
+.invoicesnap-invoice-meta strong {
+  display: block;
+  color: var(--white);
+  font-size: .69rem;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.invoicesnap-table-wrap {
+  margin: 10px 20px 0;
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.invoicesnap-line-items {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .61rem;
+  line-height: 1.35;
+}
+.invoicesnap-line-items th,
+.invoicesnap-line-items td {
+  padding: 6px 8px;
+  border-bottom: 1px solid rgba(255,255,255,.055);
+  text-align: left;
+}
+.invoicesnap-line-items thead th {
+  background: rgba(88,166,255,.08);
+  color: #9fc8ff;
+  font-size: .55rem;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+.invoicesnap-line-items tbody td { color: var(--text-2); }
+.invoicesnap-line-items th:nth-child(2),
+.invoicesnap-line-items td:nth-child(2) { width: 34px; text-align: center; }
+.invoicesnap-line-items th:last-child,
+.invoicesnap-line-items td:last-child { width: 65px; text-align: right; }
+.invoicesnap-line-items tfoot th {
+  color: var(--text-3);
+  font-weight: 500;
+  text-align: right;
+}
+.invoicesnap-line-items tfoot td { color: var(--text); font-weight: 500; }
+.invoicesnap-line-items__total th,
+.invoicesnap-line-items__total td {
+  color: #62d477 !important;
+  border-bottom: 0;
+  font-weight: 600 !important;
+}
+.invoicesnap-output {
+  margin: 10px 20px 16px;
+  color: #9fc8ff;
+  font-size: .67rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-align: right;
+}
+
+.invoicesnap-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+.invoicesnap-features article {
+  padding: 24px;
+  background: rgba(21,32,53,.72);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.invoicesnap-features article > span { color: #58a6ff; font-size: .7rem; font-weight: 600; letter-spacing: .12em; }
+.invoicesnap-features h3 { color: var(--white); font-size: 1rem; margin: 4px 0 6px; }
+.invoicesnap-features p { color: var(--text-2); font-size: .82rem; line-height: 1.65; }
+
 /* ── Warp Section ──────────────────────────────────────────── */
 .warp-hero {
   background: linear-gradient(135deg, var(--bg-2) 0%, var(--bg-3) 100%);
@@ -851,6 +1082,8 @@ a:hover { color: var(--white); }
 @media (max-width: 900px) {
   .about__grid { grid-template-columns: 1fr; gap: 40px; }
   .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .invoicesnap-hero { grid-template-columns: 1fr; gap: 40px; padding: 48px; }
+  .invoicesnap-demo { transform: none; }
   .warp-hero { padding: 40px; }
   .warp-hero::after { display: none; }
 }
@@ -865,9 +1098,13 @@ a:hover { color: var(--white); }
   .footer__inner { flex-direction: column; text-align: center; }
   .footer__links { flex-wrap: wrap; justify-content: center; }
   .hero__stats { gap: 24px; }
+  .invoicesnap-features { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {
   .hero__title { font-size: 2.4rem; }
+  .invoicesnap-hero { padding: 28px; }
+  .invoicesnap-hero__actions .btn { width: 100%; justify-content: center; }
+  .invoicesnap-invoice-meta { grid-template-columns: 1fr; }
   .warp-hero { padding: 28px; }
 }

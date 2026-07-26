@@ -59,8 +59,7 @@ const ALLOWED_PROJECT_IDS = new Set([
   'ask-aloud',
   'flow-forge',
   'classic-snake',
-  'clipboard',
-  'doc-extraction'
+  'clipboard'
 ]);
 
 const PROJECTS = [
@@ -148,20 +147,6 @@ const PROJECTS = [
     "status": "Live",
     "github": "https://github.com/mfmgold",
     "demo": "https://murtuza.neocities.org/clipboard/",
-    "download": "",
-    "featured": false,
-    "roadmap": []
-  },
-  {
-    "id": "doc-extraction",
-    "name": "InvoiceSnap",
-    "tagline": "Low-cost AI invoice extraction",
-    "description": "InvoiceSnap is a low-cost SaaS product under development that uses AI to extract key information from invoices and turn it into structured, usable data. It is being built to make accurate invoice processing simple and affordable for businesses.",
-    "category": "AI",
-    "icon": "🧾",
-    "status": "In Progress",
-    "github": "https://github.com/mfmgold",
-    "demo": "",
     "download": "",
     "featured": false,
     "roadmap": []
